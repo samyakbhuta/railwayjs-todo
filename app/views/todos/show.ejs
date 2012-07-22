@@ -1,0 +1,18 @@
+<div class="page-header">
+    <h1>Details of todo</h1>
+</div>
+
+
+<table class="table table-bordered">
+    <tbody>
+        <tr><th>title</th><td><%= todo.title %></td></tr>
+        <tr><th>content</th><td><%= todo.content %></td></tr>    
+    </tbody>
+</table>
+
+<div class="well">
+    <%- link_to('<i class="icon-edit icon-white"></i> Edit', path_to.edit_todo(todo), {class: 'btn btn-primary'}) %>
+    <%- link_to('<i class="icon-remove icon-white"></i> Delete', path_to.todo(todo), {class: 'btn btn-danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'}) %>
+    or
+    <%- link_to('Back to index', path_to.todos()) %>
+</div>

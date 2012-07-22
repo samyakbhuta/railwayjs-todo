@@ -1,0 +1,9 @@
+<div class="page-header"><h1>Edit todo</h1></div>
+
+<% form_for(todo, {action: path_to.todo(todo), method: 'PUT', id: "todo_form", class: 'form-horizontal'}, function (form) { %>
+    <%- partial('todos/form.ejs', {locals: {form: form, todo: todo}}) %>
+    <div class="form-actions">
+        <%- form.submit('<i class="icon-ok icon-white"></i> Update todo', {class: 'btn btn-primary'}) %> or
+        <%- link_to('Cancel', path_to.todo(todo), {class: 'btn'}) %>
+    </div>
+<% });%>
